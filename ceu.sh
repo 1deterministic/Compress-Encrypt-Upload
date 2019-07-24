@@ -15,7 +15,7 @@ exclude=("path/to/source/.*" "path/to/source/ignorethis") # these inside $source
 remote="remotename:/" # rclone format
 
 # location of the counter files
-config="path/to/config" # is a folder and must already exist
+config="/path/to/config" # is a folder and must already exist
 
 # counts the number of times this script has runned
 day="$config/day"
