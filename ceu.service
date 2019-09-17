@@ -1,0 +1,5 @@
+[Unit]
+Description=Compress-Encrypt-Upload daemon
+
+[Service]
+ExecStart=/usr/bin/bash -c "sleep $((15 * 60)) && '/path/to/compress' && '/path/to/encrypt' && '/path/to/upload'"

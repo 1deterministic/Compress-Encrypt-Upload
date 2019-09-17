@@ -1,0 +1,9 @@
+[Unit]
+Description=Compress-Encrypt-Upload timer
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target 
