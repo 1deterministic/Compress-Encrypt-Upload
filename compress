@@ -11,15 +11,16 @@ else
     exit 1
 fi
 
-# removes the current zipped file
-if [ -f "$target".zip ]; then
-    rm "$target".zip;
+# removes the current compressed file
+if [ -f "$target".tar.gz ]; then
+    rm "$target".tar.gz;
 fi
 
-# zips the target folder
-zip -9 -r "$target" "$source" -x $(
-    # appending all excluded folders
+# compresses the target folder
+cd "$source"
+GZIP_OPT=-9 tar $(
     for i in "${exclude[@]}"; do
-        echo "$i";
+        echo --exclude="$i";
     done
-)
+) -czf "$target".tar.gz .
+cd "$OLDPWD"

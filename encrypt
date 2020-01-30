@@ -17,4 +17,4 @@ if [ -f "$target" ]; then
 fi
 
 # encrypting the compressed file
-gpg -o "$target" -r "$gpg_id" --encrypt "$target".zip
+gpg -o "$target" -r "$gpgid" --encrypt "$target".tar.gz
