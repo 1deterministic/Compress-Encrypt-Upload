@@ -11,3 +11,16 @@ exclude=('ignorehiddenfilesinthisfolder/.*' 'ignorethisfolderorfile' 'also/ignor
 
 # remote location to send the encrypted file
 remote="remotename:/remotefolder/remotefile" # rclone format
+
+# prevents running with default configs
+# you can remove them if you want but make sure you changed the placeholder values in this file with the ones you want
+if [[ 
+    "$gpgid" == "email@domain.com" ||
+    "$source" == "/path/to/source" ||
+    "$target" == "/path/to/target" ||
+    "${exclude[@]}" == 'ignorehiddenfilesinthisfolder/.* ignorethisfolderorfile also/ignore/thisfolderorfile' ||
+    "$remote" == "remotename:/remotefolder/remotefile"
+]]; then
+    echo "You must edit the config file before running"
+    exit 1
+fi
