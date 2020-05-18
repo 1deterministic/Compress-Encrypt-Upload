@@ -37,6 +37,6 @@ ExecStart=/usr/bin/bash -c 'sleep 900 && compress-and-encrypt && upload'
 ```
 Then run `systemctl --user daemon-reload` and remove `target.tar.gz` if you want.
 
-As the timer will only run the next Monday at midnight, you can also force the service to start immediately if you want with `systemctl --user start ceu.service`. I would not recommend this for testing purposes, manually running the scripts individually will skip the 15 minutes the service waits and also show you all command outputs in the terminal
+As the timer will only run the next Monday at midnight, you can also force the service to start immediately if you want with `systemctl --user start ceu.service`. I would **not** recommend this for testing purposes and recommend manually running the scripts individually instead, as it will skip the 15 minutes the service waits and also show you all command outputs in the terminal
 
 ## [1deterministic](https://github.com/1deterministic), 2020
