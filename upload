@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # location of the config file
-config="./config"
+config="$HOME/.config/ceu/config"
 
 # tries to load the config file
 if [ -f "$config" ]; then
@@ -12,4 +12,4 @@ else
 fi
 
 # uploads the encrypted file to the remote service
-rclone copyto "$target" "$remote" --progress --stats-one-line
+rclone copyto "$target" "$remote" --progress --stats=1m

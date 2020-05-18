@@ -11,16 +11,19 @@ else
     exit 1
 fi
 
-# removes the current compressed file
-if [ -f "$target".tar.gz ]; then
-    rm "$target".tar.gz;
+# removes the current encrypted file
+if [ -f "$target" ]; then
+    rm "$target";
 fi
 
-# compresses the target folder
+# compresses the target folder and pipes its output to gpg for encryption
 cd "$source"
 GZIP_OPT=-9 tar $(
     for i in "${exclude[@]}"; do
         echo --exclude="$i";
     done
-) -czf "$target".tar.gz .
+) -cz . | gpg -o "$target" -r "$gpgid" --encrypt
 cd "$OLDPWD"
+
+# tar -cz your_dir | gpg -c -o your_archive.tgz.gpg
+# gpg -d your_archive.tgz.gpg | tar xz
