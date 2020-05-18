@@ -22,7 +22,7 @@ GZIP_OPT=-9 tar $(
     for i in "${exclude[@]}"; do
         echo --exclude="$i";
     done
-) -cz . | gpg -o "$target" -r "$gpgid" --encrypt
+) -cz . | gpg --output "$target" --recipient "$gpgid" --encrypt
 cd "$OLDPWD"
 
 # tar -cz your_dir | gpg -c -o your_archive.tgz.gpg
