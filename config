@@ -6,7 +6,7 @@ gpgid="email@domain.com"
 # dirs used and excluded files/folders
 source="/path/to/source" # is a folder
 target="/path/to/target" # is a file
-exclude=('ignorehiddenfilesinthisfolder/.*' 'ignorethisfolderorfile' 'also/ignore/thisfolderorfile') # these inside $source are ignored, notice the lack of '/' at the start of the strings and the use of single quotes (tar --exclude= format)
+exclude=('ignorehiddenfilesinthisfolder/.*' 'ignorethisfolderorfile' 'also/ignore/thisfolderorfile') # these inside $source are ignored, notice the lack of '/' at the start of the strings and the use of single quotes (tar --exclude= format) - if source is $HOME and you want to use '.*' as an exclude, change it to '.[^/]*', for other directories you can use '.*' normally
 
 
 # remote location to send the encrypted file

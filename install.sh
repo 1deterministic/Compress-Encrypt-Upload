@@ -5,10 +5,10 @@ mkdir -p "$HOME/.config/ceu"
 cp "./config" "$HOME/.config/ceu"
 
 # executables
-sudo cp "./compress" "/usr/bin"
-sudo cp "./encrypt" "/usr/bin"
-sudo cp "./compress-and-encrypt" "/usr/bin"
-sudo cp "./upload" "/usr/bin"
+sudo cp "./compress" "/usr/bin" && chmod +x "/usr/bin/compress"
+sudo cp "./encrypt" "/usr/bin" && chmod +x "/usr/bin/encrypt"
+sudo cp "./compress-and-encrypt" "/usr/bin" && chmod +x "/usr/bin/compress-and-encrypt"
+sudo cp "./upload" "/usr/bin" && chmod +x "/usr/bin/upload"
 
 # systemd service and timer
 mkdir -p "$HOME/.config/systemd/user"
